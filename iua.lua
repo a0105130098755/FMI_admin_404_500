@@ -20,9 +20,13 @@ my-admin-dashboard/
 │   │   └── Dashboard/
 │   │       ├── Dashboard.jsx
 │   │       └── Dashboard.css
+|   |       | Sidebar.jsx
+|   |       | Header.jsx
+|   |       | OverviewChart.jsx
+|   |       | Reviews.jsx
 │   ├── hooks/
 │   │   └── useFetch.js
-│   ├── services/
+│   ├── services/ㅁ
 │   │   ├── api.js
 │   │   └── auth.js
 │   ├── styles/

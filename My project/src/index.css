@@ -1,11 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./styles/tailwind.css";
 
 body {
-  @apply bg-white text-black;
+  @apply bg-gray-100 text-gray-900;
 }
 
-body.dark-mode {
-  @apply bg-gray-900 text-white;
+a {
+  @apply text-blue-500 hover:underline;
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
+import { getAllUsers } from "../../services/userService";
 
 const UserData = () => {
-  const { data, loading, error } = useFetch("/api/admin/users");
+  const { data, loading, error } = useFetch(getAllUsers);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
