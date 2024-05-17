@@ -1,0 +1,36 @@
+.not-found-page {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc107;
+  color: black;
+  text-align: center;
+}
+
+.not-found-content {
+  max-width: 600px;
+}
+
+.not-found-content h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.not-found-content p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.not-found-content a {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.not-found-content a:hover {
+  background-color: #555;
+}
