@@ -1,6 +1,7 @@
 my-admin-dashboard/
 ├── public/
 │   ├── index.html
+│   ├── logo.png
 │   └── ...
 ├── src/
 │   ├── assets/
