@@ -3,12 +3,9 @@
 @tailwind utilities;
 
 body {
-  margin: 0;
-  font-family: "Arial", sans-serif;
+  @apply bg-white text-black;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+body.dark-mode {
+  @apply bg-gray-900 text-white;
 }
