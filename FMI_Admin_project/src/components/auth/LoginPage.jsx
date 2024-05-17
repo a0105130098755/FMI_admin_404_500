@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -9,8 +10,13 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      // 로그인 로직 추가
-      setError("");
+      const response = await axios.post("/api/login", { username, password });
+      if (response.data.success) {
+        // 로그인 성공 처리
+        setError("");
+      } else {
+        setError("Invalid username or password");
+      }
     } catch (error) {
       setError("Invalid username or password");
     }
@@ -57,7 +63,11 @@ const LoginPage = () => {
           </form>
         </div>
         <div className="hidden md:flex md:w-1/2">
-          <img src="/2.png" alt="Login" className="object-cover" />
+          <img
+            src="/assets/images/login-page.png"
+            alt="Login"
+            className="object-cover"
+          />
         </div>
       </div>
     </div>

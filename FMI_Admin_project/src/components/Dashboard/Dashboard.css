@@ -1,0 +1,33 @@
+/* src/styles/Dashboard.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the dashboard */
+.dashboard-container {
+  @apply bg-gray-900 text-white min-h-screen flex;
+}
+
+.sidebar {
+  @apply w-64 bg-gray-800 p-4;
+}
+
+.header {
+  @apply bg-gray-800 p-4 flex justify-between items-center;
+}
+
+.content {
+  @apply flex-1 p-4;
+}
+
+.card {
+  @apply bg-gray-700 p-4 rounded-lg shadow-md;
+}
+
+.card-title {
+  @apply text-lg font-bold mb-2;
+}
+
+.chart-container {
+  @apply bg-gray-800 p-4 rounded-lg shadow-md;
+}
