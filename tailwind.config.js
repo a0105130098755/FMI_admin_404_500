@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: ["./src/**/*.{js,jsx,}", "./public/index.html"],
   darkMode: "class", // 'media' 또는 'class' 중 선택 가능
   theme: {
     extend: {

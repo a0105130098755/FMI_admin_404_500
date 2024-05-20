@@ -5,6 +5,7 @@ const api = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true, // 세션 쿠키를 포함하도록 설정
 });
 
 export default api;

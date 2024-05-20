@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/auth/AdminLogin";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NotFound from "./components/errors/NotFound";
@@ -8,12 +8,12 @@ import InternalServerError from "./components/errors/InternalServerError";
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={LoginPage} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/500" component={InternalServerError} />
-        <Route component={NotFound} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/500" element={<InternalServerError />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Router>
   );
 }

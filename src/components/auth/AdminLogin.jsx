@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AdminLogin.css";
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/admin/login", {
+      const response = await axios.post("/api/admin/auth/login", {
         email,
         password,
       });
       if (response.status === 200) {
-        localStorage.setItem("adminToken", response.data.token);
-        history.push("/dashboard");
+        navigate("/dashboard");
       }
     } catch (error) {
+      console.error("Login error:", error);
       alert("Invalid credentials");
     }
   };
@@ -55,7 +55,7 @@ function AdminLogin() {
         </form>
       </div>
       <div className="login-image">
-        <img src="/path/to/your/image.png" alt="Login Illustration" />
+        <img src="/2.svg" alt="Login Illustration" />
       </div>
     </div>
   );
