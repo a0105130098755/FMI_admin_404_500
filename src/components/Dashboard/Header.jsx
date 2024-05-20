@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch } from "@headlessui/react";
-import { MoonIcon, SunIcon } from "@heroicons/react/outline";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"; // 경로 수정
 
 const Header = ({ darkMode, setDarkMode }) => {
   return (

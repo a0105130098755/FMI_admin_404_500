@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./AdminLogin.css";
+import "./AdminLogin.css"; // 여기에 필요한 CSS 추가
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -11,15 +11,18 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/admin/auth/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:8181/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
       if (response.status === 200) {
+        localStorage.setItem("adminToken", response.data.token);
         navigate("/dashboard");
       }
     } catch (error) {
-      console.error("Login error:", error);
       alert("Invalid credentials");
     }
   };

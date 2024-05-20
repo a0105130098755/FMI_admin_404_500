@@ -1,32 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  purge: ["./src/**/*.{js,jsx,}", "./public/index.html"],
-  darkMode: "class", // 'media' 또는 'class' 중 선택 가능
+// tailwind.config.mjs
+export default {
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        dark: "#181818",
-        light: "#f4f4f4",
-        primary: "#3490dc",
-        secondary: "#ffed4a",
-        danger: "#e3342f",
-      },
-      screens: {
-        xs: "475px",
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        "2xl": "1536px",
-      },
-    },
+    extend: {},
   },
   variants: {
-    extend: {
-      backgroundColor: ["dark"],
-      textColor: ["dark"],
-      borderColor: ["dark"],
-    },
+    extend: {},
   },
   plugins: [],
 };

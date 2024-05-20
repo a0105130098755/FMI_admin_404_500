@@ -4,6 +4,7 @@ import LoginPage from "./components/auth/AdminLogin";
 import Dashboard from "./components/Dashboard/Dashboard";
 import NotFound from "./components/errors/NotFound";
 import InternalServerError from "./components/errors/InternalServerError";
+import "./App.css"; // Ensure this path is correct
 
 function App() {
   return (
