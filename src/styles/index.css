@@ -1,3 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 기존의 스타일을 유지하면서 부트스트랩을 포함할 수 있습니다. */
+
+/* 부트스트랩 기본 스타일 */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* 추가적인 커스텀 스타일 */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Bootstrap 기본 배경색 */
+  color: #212529; /* Bootstrap 기본 텍스트 색상 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #343a40; /* Bootstrap 기본 색상 */
+}

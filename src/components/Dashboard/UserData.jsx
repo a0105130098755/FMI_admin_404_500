@@ -1,6 +1,6 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
-import { getAllUsers } from "../../services/userService";
+import { getAllUsers } from "../../services/api";
 
 const UserData = () => {
   const { data, loading, error } = useFetch(getAllUsers);

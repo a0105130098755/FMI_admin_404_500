@@ -3,6 +3,9 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import OverviewChart from "./OverviewChart";
 import UserData from "./UserData";
+import ApiUsageChart from "./ApiUsageChart";
+import UserChart from "./UserChart";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -10,24 +13,51 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add("dark");
+      document.body.classList.add("bg-dark", "text-white");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.body.classList.remove("bg-dark", "text-white");
     }
   }, [darkMode]);
 
   return (
-    <div className="dashboard-container flex">
+    <div className="d-flex">
       <Sidebar />
-      <div className="flex-1 flex flex-col">
+      <div className="main-content">
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main className="flex-1 p-4 bg-gray-100 dark:bg-gray-900">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="card">
-              <OverviewChart />
+        <main className="container-fluid">
+          <div className="chart-row">
+            <div className="chart-column">
+              <div className="card">
+                <div className="card-title">Overview</div>
+                <OverviewChart />
+              </div>
             </div>
-            <div className="card md:col-span-2 lg:col-span-2">
-              <UserData />
+            <div className="chart-column">
+              <div className="card">
+                <div className="card-title">API Usage Overview</div>
+                <ApiUsageChart />
+              </div>
+            </div>
+          </div>
+          <div className="chart-row">
+            <div className="chart-column">
+              <div className="card">
+                <div className="card-title">Users Behavior</div>
+                <UserChart />
+              </div>
+            </div>
+            <div className="chart-column">
+              <div className="card">
+                <div className="card-title">Email Statistics</div>
+                <UserData />
+              </div>
+            </div>
+          </div>
+          <div className="chart-row">
+            <div className="chart-column">
+              <div className="card error-message">
+                Error: axios is not defined
+              </div>
             </div>
           </div>
         </main>

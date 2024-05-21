@@ -34,7 +34,7 @@ function AdminLogin() {
         <p>Welcome to our Page</p>
         <form onSubmit={handleLogin}>
           <div className="input-group">
-            <label>Username</label>
+            <label>User Email</label>
             <input
               type="email"
               value={email}

@@ -1,33 +1,109 @@
-/* src/styles/Dashboard.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Dashboard.css */
 
-/* Custom styles for the dashboard */
-.dashboard-container {
-  @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex;
-}
-
+/* Sidebar styles */
 .sidebar {
-  @apply w-64 bg-gray-800 p-4;
+  width: 250px;
+  background-color: #f8f9fa;
+  height: 100vh;
+  position: fixed;
 }
 
-.header {
-  @apply bg-white dark:bg-gray-800 p-4 flex justify-between items-center shadow-md;
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
 }
 
-.content {
-  @apply flex-1 p-4 bg-gray-100 dark:bg-gray-900;
+.sidebar-nav {
+  padding: 10px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav ul li {
+  margin: 10px 0;
+}
+
+.sidebar-nav ul li a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+  background-color: #e9ecef;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+/* Main content styles */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
 }
 
 .card-title {
-  @apply text-lg font-bold mb-2;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .chart-container {
-  @apply bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md;
+  padding: 20px;
+}
+
+.chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.error-message {
+  padding: 20px;
+  background-color: #ffc107;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .chart-row {
+    flex-direction: column;
+  }
 }
