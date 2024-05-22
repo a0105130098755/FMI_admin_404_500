@@ -30,6 +30,12 @@ html {
   height: 100vh;
 }
 
+.login-form h2,
+.login-form p,
+.login-form label {
+  color: white;
+}
+
 .login-form h2 {
   margin-bottom: 20px;
   font-size: 40px;

@@ -51,9 +51,6 @@ function AdminLogin() {
               required
             />
           </div>
-          <div className="input-group">
-            <input type="checkbox" /> Keep me logged in
-          </div>
           <button type="submit">Sign In</button>
         </form>
       </div>
