@@ -11,13 +11,13 @@ import {
   PencilIcon,
   MapIcon,
 } from "@heroicons/react/24/outline";
-import "./Sidebar.css";
+import "./Dashboard.css";
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <h2>CREATIVE TIM</h2>
+        <h2>FMI TIM</h2>
       </div>
       <nav className="sidebar-nav">
         <ul>

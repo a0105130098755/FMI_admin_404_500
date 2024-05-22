@@ -1,0 +1,23 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 100%;
+}
+
+.chart-column {
+  flex: 1;
+  min-width: 300px;
+  height: 400px; /* 차트 높이 조정 */
+}
+
+.chart-column canvas {
+  height: 100% !important; /* 차트 해상도 향상 */
+  width: 100% !important;
+}

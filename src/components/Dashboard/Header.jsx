@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Switch } from "@headlessui/react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import "./Dashboard.css";
 
-const Header = ({ darkMode, setDarkMode }) => {
+const Header = ({ toggleDarkMode, darkMode }) => {
   return (
-    <header className="d-flex justify-content-between align-items-center p-3 bg-white shadow-sm">
-      <h1 className="h4 mb-0">Dashboard</h1>
-      <div className="d-flex align-items-center">
+    <header className="header">
+      <h1>Dashboard</h1>
+      <div className="toggle-switch">
         <Switch
           checked={darkMode}
-          onChange={setDarkMode}
+          onChange={toggleDarkMode}
           className={`${
             darkMode ? "bg-dark" : "bg-secondary"
           } position-relative d-inline-flex align-items-center h-6 rounded-pill w-11`}

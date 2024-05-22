@@ -23,7 +23,7 @@ ChartJS.register(
   Legend
 );
 
-const ChartComponent = () => {
+const ChartComponent = ({ darkMode }) => {
   const lineData = {
     labels: [
       "9:00AM",
@@ -84,10 +84,26 @@ const ChartComponent = () => {
     plugins: {
       legend: {
         position: "top",
+        labels: {
+          color: darkMode ? "white" : "black",
+        },
       },
       title: {
         display: true,
         text: "Users Behavior (24 Hours performance)",
+        color: darkMode ? "white" : "black",
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: darkMode ? "white" : "black",
+        },
+      },
+      y: {
+        ticks: {
+          color: darkMode ? "white" : "black",
+        },
       },
     },
   };
@@ -97,21 +113,27 @@ const ChartComponent = () => {
     plugins: {
       legend: {
         position: "top",
+        labels: {
+          color: darkMode ? "white" : "black",
+        },
       },
       title: {
         display: true,
         text: "Email Statistics (Last Campaign Performance)",
+        color: darkMode ? "white" : "black",
       },
     },
   };
 
   return (
-    <div>
-      <div className="mb-5">
-        <Line data={lineData} options={lineOptions} />
-      </div>
-      <div className="mb-5">
-        <Pie data={pieData} options={pieOptions} />
+    <div className="chart">
+      <div className="chart-row">
+        <div className="chart-column">
+          <Line data={lineData} options={lineOptions} />
+        </div>
+        <div className="chart-column">
+          <Pie data={pieData} options={pieOptions} />
+        </div>
       </div>
     </div>
   );
