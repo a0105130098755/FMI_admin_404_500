@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-const useFetch = (fetchFunction) => {
+const useFetch = (url, options) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,10 +9,8 @@ const useFetch = (fetchFunction) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8080/api/admin/api-usage"
-        );
-        setChartData(response.data); // 이 부분에서 response.data의 구조가 맞는지 확인합니다.
+        const response = await axios(url, options);
+        setData(response.data);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -19,7 +18,7 @@ const useFetch = (fetchFunction) => {
       }
     };
     fetchData();
-  }, []);
+  }, [url, options]);
 
   return { data, loading, error };
 };

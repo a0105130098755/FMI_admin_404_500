@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NotFound.css"; // CSS 파일을 불러옵니다.
+import "./NotFound.css";
 
 const NotFound = () => {
   return (

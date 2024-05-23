@@ -1,48 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
-import { getApiUsage } from "../../services/api";
+import useFetch from "../../hooks/useFetch";
 
 const ApiUsageChart = ({ darkMode }) => {
-  const [chartData, setChartData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getApiUsage();
-        setChartData(data);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data, loading, error } = useFetch(
+    "http://localhost:8181/api/admin/api-usage"
+  );
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const data = {
+  const chartData = {
     labels: ["Week #1", "Week #2", "Week #3", "Week #4"],
     datasets: [
       {
         label: "This Month",
-        data: chartData?.thisMonthData || [],
+        data: data?.thisMonthData || [],
         borderColor: darkMode ? "white" : "purple",
         backgroundColor: "rgba(128, 0, 128, 0.2)",
       },
       {
         label: "Last Month",
-        data: chartData?.lastMonthData || [],
+        data: data?.lastMonthData || [],
         borderColor: darkMode ? "lightgrey" : "pink",
         backgroundColor: "rgba(255, 192, 203, 0.2)",
       },
       {
         label: "2 Month Ago",
-        data: chartData?.twoMonthsAgoData || [],
+        data: data?.twoMonthsAgoData || [],
         borderColor: darkMode ? "grey" : "black",
         backgroundColor: "rgba(255, 255, 255, 0.2)",
       },
@@ -83,8 +68,8 @@ const ApiUsageChart = ({ darkMode }) => {
 
   return (
     <div className="chart-container">
-      <h2 className="card-title">Api Usage Chart</h2>
-      <Line data={data} options={options} />
+      <h2 className="card-title">API Usage Chart</h2>
+      <Line data={chartData} options={options} />
     </div>
   );
 };
