@@ -1,3 +1,5 @@
+// Dashboard.jsx (관리자의 React 프로젝트에 위치)
+
 import React from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
@@ -6,6 +8,7 @@ import UserData from "./UserData";
 import ApiUsageChart from "./ApiUsageChart";
 import UserChart from "./UserChart";
 import ChartComponent from "./ChartComponent"; // 추가된 컴포넌트
+import DeactivatedUsers from "./DeactivatedUsers"; // 추가된 컴포넌트
 import "./Dashboard.css";
 
 const Dashboard = ({ toggleDarkMode, darkMode }) => {
@@ -29,6 +32,9 @@ const Dashboard = ({ toggleDarkMode, darkMode }) => {
           </div>
           <div className="content-card">
             <ChartComponent darkMode={darkMode} />
+          </div>
+          <div className="content-card">
+            <DeactivatedUsers darkMode={darkMode} />
           </div>
         </div>
       </div>

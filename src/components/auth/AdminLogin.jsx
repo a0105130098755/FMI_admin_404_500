@@ -11,18 +11,21 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+      console.log("Attempting to log in with email:", email); // 이메일 출력
       const response = await axios.post(
         "http://localhost:8181/api/auth/login",
         {
           email,
           password,
-        }
+        },
+        { withCredentials: true } // withCredentials 추가
       );
       if (response.status === 200) {
         localStorage.setItem("adminToken", response.data.token);
         navigate("/dashboard");
       }
     } catch (error) {
+      console.error("Error logging in:", error); // 에러 로그 추가
       alert("Invalid credentials");
     }
   };
