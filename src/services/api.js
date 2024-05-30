@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://192.168.10.25:8181",
-  withCredentials: true, // 백엔드 서버의 기본 URL
+  baseURL: "http://192.168.10.25:8181", // 백엔드 서버의 실제 IP 주소로 변경
+  withCredentials: true, // withCredentials 옵션 추가
 });
 
 export const getApiUsage = async () => {

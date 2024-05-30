@@ -9,7 +9,7 @@ const DeactivatedUsers = () => {
     const fetchDeactivatedUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8181/api/admin/deactivated-users"
+          "http://192.168.10.25:8181/api/admin/deactivated-users"
         );
         setUsers(response.data);
       } catch (error) {
@@ -22,7 +22,7 @@ const DeactivatedUsers = () => {
   const handleDelete = async (userId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8181/api/admin/users/${userId}`
+        `http://192.168.10.25:8181/api/admin/users/${userId}`
       );
       if (response.status === 204) {
         setUsers(users.filter((user) => user.id !== userId));

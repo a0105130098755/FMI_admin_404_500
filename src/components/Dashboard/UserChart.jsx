@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch";
 
 const UserChart = ({ darkMode }) => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8181/api/admin/users"
+    "http://192.168.10.25:8181/api/admin/users"
   );
 
   if (loading) return <div>Loading...</div>;
@@ -58,4 +58,3 @@ const UserChart = ({ darkMode }) => {
 };
 
 export default UserChart;
-

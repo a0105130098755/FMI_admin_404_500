@@ -24,7 +24,7 @@ ChartJS.register(
 
 const UserData = ({ darkMode }) => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8181/api/admin/users"
+    "http://192.168.10.25:8181/api/admin/users"
   );
 
   // 사용자 데이터를 가입 날짜별로 그룹화

@@ -60,7 +60,7 @@ const ChartComponent = ({ darkMode }) => {
   };
 
   const pieData = {
-    labels: ["Open", "Bounce", "Unsubscribe"],
+    labels: ["Open", "Click", "Usage"],
     datasets: [
       {
         data: [62, 32, 6],

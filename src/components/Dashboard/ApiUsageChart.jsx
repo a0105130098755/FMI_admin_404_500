@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch";
 
 const ApiUsageChart = ({ darkMode }) => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8181/api/admin/api-usage"
+    "http://192.168.10.25:8181/api/admin/api-usage"
   );
 
   if (loading) return <p>Loading...</p>;
@@ -14,22 +14,16 @@ const ApiUsageChart = ({ darkMode }) => {
     labels: ["Week #1", "Week #2", "Week #3", "Week #4"],
     datasets: [
       {
-        label: "This Month",
+        label: "This week",
         data: data?.thisMonthData || [],
         borderColor: darkMode ? "white" : "purple",
         backgroundColor: "rgba(128, 0, 128, 0.2)",
       },
       {
-        label: "Last Month",
+        label: "Last week",
         data: data?.lastMonthData || [],
         borderColor: darkMode ? "lightgrey" : "pink",
         backgroundColor: "rgba(255, 192, 203, 0.2)",
-      },
-      {
-        label: "2 Month Ago",
-        data: data?.twoMonthsAgoData || [],
-        borderColor: darkMode ? "grey" : "black",
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
       },
     ],
   };
