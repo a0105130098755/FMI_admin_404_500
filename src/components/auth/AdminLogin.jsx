@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../services/api"; // 수정된 api 설정 사용
 import "./AdminLogin.css"; // 여기에 필요한 CSS 추가
 
 function AdminLogin() {
@@ -11,21 +11,20 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      console.log("Attempting to log in with email:", email); // 이메일 출력
+      console.log("Attempting to log in with email:", email);
       const response = await axios.post(
-        "http://localhost:8181/api/auth/login",
+        "/api/auth/login", // 수정된 api 설정 사용
         {
           email,
           password,
-        },
-        { withCredentials: true } // withCredentials 추가
+        }
       );
       if (response.status === 200) {
         localStorage.setItem("adminToken", response.data.token);
         navigate("/dashboard");
       }
     } catch (error) {
-      console.error("Error logging in:", error); // 에러 로그 추가
+      console.error("Error logging in:", error);
       alert("Invalid credentials");
     }
   };
